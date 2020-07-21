@@ -9,7 +9,7 @@ import datetime
 a= '''zgrep '8001900158703693441' /prd/im/cdrs/smsc/bkup/mts_cdr.log.20190801*|grep 'ST:1' | awk -F'|' '{ print $4 }' >/tmp/success_aug19/success_8001900158703693441.txt &''' #example data
 b=a.split()
 
-f1= open(r'C:\Users\egoeshu\Desktop\testingdoc\jobs_outputqueries.txt', 'w')#to write O/P in a file
+f1= open(r'Filepath', 'w')#to write O/P in a file. Giving Filepath in which u want to store the O/P.
 def command_modify(sub_id, parameter_date):
     global c  # giving error i.e local variable 'c' referenced before assignment thst why made it global
     c=b
@@ -47,7 +47,7 @@ def command_modify(sub_id, parameter_date):
 
 
 filename= input('Enter the file name you want to run: ') #taking input
-for roots, dirs, files in os.walk(r'C:\Users\egoeshu'):  #getting input file's path
+for roots, dirs, files in os.walk(r'C:\Users\'):  #getting input file's path
     for name in files:
         if name==filename:
             filepath= os.path.abspath(os.path.join(roots, name))
